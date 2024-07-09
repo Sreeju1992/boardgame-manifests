@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: boardgame
+  name: boardgame-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: boardgame
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: boardgame
+    spec:
+      containers:
+      - image: sreejith92/boardgame:v1
+        name: boardgame
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
+status: {}
