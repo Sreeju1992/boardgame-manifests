@@ -18,7 +18,7 @@ spec:
         app: boardgame
     spec:
       containers:
-      - image: sreejith92/boardgame:v1
+      - image: sreejith92/boardgame:2-null
         name: boardgame
         imagePullPolicy: IfNotPresent
         ports:
